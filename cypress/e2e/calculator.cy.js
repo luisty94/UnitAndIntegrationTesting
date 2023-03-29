@@ -113,12 +113,20 @@ describe("Calculator", () => {
     cy.get('#operator-equals').click();
     cy.get('.display').should('contain', 'Infinity')
   })
-  it('should have working divide by 0', () => {
+  it('should display an error when dividing by 0', () => {
     cy.get('#number5').click();
     cy.get('#operator-divide').click();
     cy.get('#number0').click();
     cy.get('#operator-equals').click();
     cy.get('.display').should('contain', 'error')
+  })
+  
+  it('should be able to display positive numbers after a calculation', () => {
+    cy.get('#number5').click();
+    cy.get('#operator-multiply').click();
+    cy.get('number2').click();
+    cy.get('operator-equals').click();
+    cy.get('.display').should('contain', '10')
   })
 
 })
