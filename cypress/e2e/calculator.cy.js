@@ -125,7 +125,7 @@ describe("Calculator", () => {
     cy.get('#number5').click();
     cy.get('#operator-multiply').click();
     cy.get('#number2').click();
-    cy.get('operator-equals').click();
+    cy.get('#operator-equals').click();
     cy.get('.display').should('contain', '10')
   })
 
